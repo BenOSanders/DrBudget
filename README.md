@@ -1,2 +1,2 @@
-# Serve
-New serve day app
+# Dr. Budget
+A person budgeting app.
