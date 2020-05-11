@@ -51,12 +51,9 @@ export default class Cat extends React.Component {
         <TouchableHighlight onPress={() => { this.setModalVisible(true); this.setInputText(item.amount), this.setEditedItem(item.id) }}
             underlayColor={'#f1f1f1'}>
             <View style={styles.item} >
-                {/* <View style={styles.marginLeft}>
-                    <View style={[styles.menu, { backgroundColor: item.color }]}></View>
-                    <View style={[styles.menu, { backgroundColor: item.color }]}></View>
-                    <View style={[styles.menu, { backgroundColor: item.color }]}></View>
-                </View> */}
-                <Text style={styles.text}> {item.name} - {item.amount} out of {item.max} </Text>
+                <Text style={styles.text}> {item.name}</Text>
+                <Text style={styles.text}>{item.amount}</Text>
+                <Text style={styles.text}>out of {item.max}</Text>
             </View>
         </TouchableHighlight>
     );
@@ -66,7 +63,7 @@ export default class Cat extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.mainText}>Budget Left: {this.state.budget - this.state.expenses} - {this.state.expenses}</Text>
                 <FlatList
-                    data={Data}
+                    data={this.state.data}
                     renderItem={this.renderItem}
                 />
                 <Modal animationType="fade" visible={this.state.isModalVisible}
@@ -76,7 +73,7 @@ export default class Cat extends React.Component {
                         <TextInput
                             style={styles.textInput}
                             onChangeText={(text) => { this.setState({ inputText: text }); console.log('state ', this.state.inputText) }}
-                            value={this.state.inputText}
+                            value={this.state.inputText.toString()}
                             keyboardType = 'numeric'
                             editable={true}
                             multiline={false}
@@ -103,12 +100,6 @@ const styles = StyleSheet.create({
     mainText: {
         padding: 5,
         fontSize: 25
-    },
-    text: {
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // color: 'red',
-        // fontSize: 30
     },
     listItem: {
         padding: 5,
@@ -137,13 +128,6 @@ const styles = StyleSheet.create({
     },
     marginLeft: {
         marginLeft: 5,
-    },
-    menu: {
-        width: 20,
-        height: 2,
-        backgroundColor: '#111',
-        margin: 2,
-        borderRadius: 3,
     },
     text: {
         marginVertical: 30,
