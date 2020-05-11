@@ -77,8 +77,9 @@ target 'DrBudget' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  
   pod 'Plaid', '~> 1.1.30'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'DrBudgetTests' do
     inherit! :complete

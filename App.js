@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Budget from './Components/Budget';
 import Cat from './Components/Cat';
+import Nav from './Components/Nav';
 
 import { SafeAreaView } from 'react-native';
 
@@ -17,8 +18,15 @@ const App = () => {
     <SafeAreaView>
       <Budget amount={budgetAmount} />
       <Cat amount={budgetAmount} />
+      <Nav />
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  hide: {
+    display: 'none'
+  }
+});
 
 export default App;
