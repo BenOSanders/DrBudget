@@ -105,10 +105,10 @@ const styles = StyleSheet.create({
         fontSize: 25
     },
     text: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        color: 'red',
-        fontSize: 30
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        // color: 'red',
+        // fontSize: 30
     },
     listItem: {
         padding: 5,
